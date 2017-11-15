@@ -8,9 +8,23 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define _ERROR 0
+#define _NORMAL 1
+#define _SKIP 2
+#define _SHELL_END 3
+#define _BUILT_IN 4
+#define _PATH_NREADY 5
+#define _PATH_READY 6
+
+extern char **environ;
+
 void promptShell(void);
-void getToken(char ***args, char **buf);
+char **getToken(char **buf, char *pattern);
 void shellInstance(void);
-void execute(char **args);
+void execute(char *arg, char **args);
+unsigned int is_arg_ready(char *arg);
+char *getKeyValue(char *key, char **env);
+char *getPathArgs(char *prog, char **env);
+char *get_x_args(char **env_paths, char *program);
 
 #endif

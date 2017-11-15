@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-void execute(char **args)
+void execute(char *arg, char **args)
 {
 	pid_t pid;
 
@@ -10,10 +10,8 @@ void execute(char **args)
 
 	if (pid == 0)
 	{
-		if (execve(args[0], args, NULL) == -1)
+		if (execve(arg, args, NULL) == -1)
 			perror("execute command failed");
 		exit(EXIT_FAILURE);
 	}
-	else
-		wait(NULL);
 }
