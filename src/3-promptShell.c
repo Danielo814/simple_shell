@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-void promptShell(void)
+unsigned int promptShell(void)
 {
 	char *buffer = NULL;
 	size_t length = 0;
@@ -42,6 +42,7 @@ void promptShell(void)
 		free(pPath);
 	if (buffer != NULL)
 		free(buffer);
+	return (stat);
 }
 
 unsigned int is_arg_ready(char *arg)
