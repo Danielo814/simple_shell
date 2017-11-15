@@ -18,7 +18,7 @@
 
 extern char **environ;
 
-unsigned int promptShell(void);
+int promptShell(void);
 char **getToken(char **buf, char *pattern);
 void shellInstance();
 void execute(char *arg, char **args);

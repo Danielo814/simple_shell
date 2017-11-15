@@ -14,17 +14,12 @@ void shellInstance()
 	}
 	if(pid == 0)
 	{
-		stat = shellInstance();
+		stat = promptShell();
 		switch(stat)
 		{
-			case 1:
-			case 2:
-			case 4:
-			case 5:
 			case 6:
 				exit (1);
 				break;
-			case 0:
 			case 3:
 				exit (0);
 				break;
@@ -35,7 +30,7 @@ void shellInstance()
 	wait(&status);
 	stat = WEXITSTATUS(status);
 	if (stat)
-		promptShell();
+		shellInstance();
 	else
-		exit(1);
+		return;
 }

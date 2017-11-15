@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-unsigned int promptShell(void)
+int promptShell(void)
 {
 	char *buffer = NULL;
 	size_t length = 0;
@@ -13,10 +13,7 @@ unsigned int promptShell(void)
 	getCheck = getline(&buffer, &length, stdin);
 
 	if (getCheck == -1)
-	{
 		stat = _SHELL_END;
-		exit(2);
-	}
 	if (getCheck == 1)
 		stat = _SKIP;
 	if (stat == _NORMAL)
