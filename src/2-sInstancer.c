@@ -27,10 +27,10 @@ void shellInstance()
 				exit (1);
 		}
 	}
-	wait(&status);
-	stat = WEXITSTATUS(status);
-	if (stat)
-		shellInstance();
-	else
-		return;
+	    wait(&status);
+	    stat = WEXITSTATUS(status);
+        if (stat)
+	        shellInstance();
+       else
+	        return;
 }

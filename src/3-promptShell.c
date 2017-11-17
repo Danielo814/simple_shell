@@ -18,8 +18,10 @@ int promptShell(void)
 		stat = _SKIP;
 	if (stat == _NORMAL)
 		args = getToken(&buffer, " \n\t\r");
-
-
+/*
+ *  if(stat == _NORMAL)
+ *      stat = getBIN(args);
+ */
 	if (stat == _NORMAL)
 		stat = is_arg_ready(args[0]) ? _PATH_READY : _PATH_NREADY;
 	if (stat == _PATH_NREADY)
