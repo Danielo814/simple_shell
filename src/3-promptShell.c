@@ -13,7 +13,7 @@ int promptShell(void)
 	getCheck = getline(&buffer, &length, stdin);
 
 	if (getCheck == -1)
-		stat = _SHELL_END;
+		stat = _SHELL_END, write(STDOUT_FILENO, "\n", 1);
 	if (getCheck == 1)
 		stat = _SKIP;
 	if (stat == _NORMAL)

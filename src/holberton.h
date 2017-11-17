@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdarg.h>
 
 #define _ERROR 0
 #define _NORMAL 1
@@ -26,5 +27,11 @@ unsigned int is_arg_ready(char *arg);
 char *getKeyValue(char *key, char **env);
 char *getPathArgs(char *prog, char **env);
 char *get_x_args(char **env_paths, char *program);
+char *_strcat(char *dest, char *src);
+char *_strcpy(char *dest, char *src);
+char *_memset(char *s, char b, unsigned int n);
+int _strlen(char *s);
+unsigned int countToks(char *str, char *delim);
+char *_stralloc(int count, ...);
 
 #endif
