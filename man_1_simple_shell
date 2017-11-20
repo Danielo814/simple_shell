@@ -1,0 +1,123 @@
+.TH hsh 1 "November 19, 2017" "Simple Shell Manual"
+
+.SH NAME
+
+.B simple_shell
+- Simple command line interpreter or shell
+
+
+.SH SYNOPSIS
+
+.B ./hsh
+.I [no options]
+
+
+.SH DESCRIPTION
+
+simple_shell is a command line interpreter that executes commands read from standard input.  simple_shell runs on the linux environment.
+
+
+.SH ARGUMENTS
+The first argument read is interpreted as a command and the following arguments are the command's parameters.
+.PP
+.B hsh
+reads and executes commands from standard input, then exits.
+.B hsh
+exit status is the status of the last command executed from input.
+.SH INVOCATION
+
+compile with GCC, as shown in this example
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.P
+.RE
+simple_shell can be run by entering the below command on the command line followed by "enter." The prompt
+will appear and you will then be in interactive mode and able to enter commands.
+.P
+.RS
+.B $ ./hsh
+
+Example of executables:
+.IP
+.br
+.\&
+.RS
+\&$ echo "Example"
+.br
+\&"Example"
+.br
+\&$
+
+
+.SH BUILTINS COMMANDS
+
+The following builtin commands are supported:
+
+.IT
+.B exit
+- The exit command terminates the current shell.
+
+.B env
+- prints a list of all shell variables. Variables are separated by a new line as shown in example below
+
+
+Example of builtin command:
+.IP
+.br
+.\&
+.RS
+\&$ env
+.br
+\&TERM=xterm-256color
+.br
+\&SHELL=/bin/bash
+.br
+\&SSH_CLIENT=10.0.2.2 50046 22t
+.br
+\&SSH_TTY=/dev/pts/0
+.br
+\&LC_ALL=en_US
+.br
+\&USER=vagrant
+.br
+\&MAIL=/var/mail/vagrant
+.br
+\&PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+.br
+\&PWD=/home/vagrant/simple_shell
+.br
+\&LANG=en_US.UTF-8
+.br
+\&SHLVL=1
+.br
+\&HOME=/home/vagrant
+.br
+\&LOGNAME=vagrant
+.br
+\&SSH_CONNECTION=10.0.2.2 59142 10.0.2.15 22
+.br
+\&LESSOPEN=| /usr/bin/lesspipe %s
+.br
+\&XDG_RUNTIME_DIR=/run/user/1000
+.br
+\&LESSCLOSE=/usr/bin/lesspipe %s %s
+.br
+\&=./hsh
+.br
+\&OLDPWD=/home/vagrant
+.br
+\&$
+
+
+.SH BUGS
+No known bugs
+
+.SH AUTHORS
+
+Sid Carroll <squidcarroll@gmail.com>
+
+Daniel Ojeda <daniel.ojeda@holbertonschool.com>
+
+.SH SEE ALSO
+bash(1)
