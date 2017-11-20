@@ -1,5 +1,10 @@
 #include "holberton.h"
-
+/**
+ * countToks - 
+ * @str:
+ * @delim:
+ * Return:
+ */
 unsigned int countToks(char *str, char *delim)
 {
     int i = 0, j = 0;

@@ -1,5 +1,10 @@
 #include "holberton.h"
-
+/**
+ * getKeyValue - 
+ *
+ * @key:
+ * Return:
+ */
 char *getKeyValue(char *key)
 {
     int i = 0;
@@ -14,7 +19,12 @@ char *getKeyValue(char *key)
     tmp = strstr(tmp, "="), tmp++;
     return (tmp);
 }
-
+/**
+ * getPathArgs - 
+ *
+ * @prog:
+ * Return:
+ */
 char *getPathArgs(char *prog)
 {
     char *tmp;
@@ -30,7 +40,13 @@ char *getPathArgs(char *prog)
     free(tmp_args);
     return (tmp);
 }
-
+/**
+ * get_x_args - 
+ *
+ * @env_paths:
+ * @program:
+ * Return:
+ */
 char *get_x_args(char **env_paths, char *program)
 {
     int i = 1;
@@ -61,7 +77,8 @@ char *_stralloc(int count, ...)
     int sLen;
     int aLen;
 
-    va_start(list, count);
+  
+  va_start(list, count);
 
     tmp_arg = va_arg(list, char *), count--;
     aLen = _strlen(tmp_arg);

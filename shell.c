@@ -1,4 +1,9 @@
 #include "holberton.h"
+/**
+ * main - 
+ *
+ * Return:
+ */
 int main(void)
 {
     int stat;
@@ -9,7 +14,11 @@ int main(void)
 
     return (EXIT_SUCCESS);
 }
-
+/**
+ * promptShell - 
+ *
+ * Return:
+ */
 int promptShell(void)
 {
     char *buffer = NULL;
@@ -47,7 +56,13 @@ int promptShell(void)
     free(buffer);
     return (stat);
 }
-
+/**
+ * getToken - 
+ *
+ * @buf:
+ * @pattern:
+ * Return:
+ */
 char **getToken(char **buf, char *pattern)
 {
     int i = 1;
@@ -74,7 +89,13 @@ char **getToken(char **buf, char *pattern)
     args[i] = NULL;
     return (args);
 }
-
+/**
+ * execute - 
+ *
+ * @arg:
+ * @args:
+ * Return:
+ */
 void execute(char *arg, char **args)
 {
     pid_t pid;
