@@ -9,13 +9,9 @@
 #include <string.h>
 #include <stdarg.h>
 
-#define _ERROR 0
 #define _NORMAL 1
 #define _SKIP 2
 #define _SHELL_END 3
-#define _BUILT_IN 4
-#define _PATH_NREADY 5
-#define _PATH_READY 6
 
 extern char **environ;
 
@@ -33,9 +29,11 @@ int _strlen(char *s);
 unsigned int countToks(char *str, char *delim);
 char *_stralloc(int count, ...);
 char *_strstr(char *haystack, char *needle);
-int built_ins(char **);
-int _env(char **);
-int _bin_exit(char **);
+int built_ins(char **args);
+int _env(char **args);
+int _bin_exit(char **args);
+int _strcmp(char *s1, char *s2);
+
 /**
  * struct built - built ins structure
  * @cmd: command to match

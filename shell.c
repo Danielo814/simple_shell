@@ -26,31 +26,34 @@ int promptShell(void)
     char **args = NULL;
     size_t length = 0;
     ssize_t getCheck;
-    unsigned int stat = _NORMAL;
+    int stat = _NORMAL;
 
     stat = _NORMAL;
     write(STDOUT_FILENO, "$ ", 2);
     getCheck = getline(&buffer, &length, stdin);
 
     if (getCheck == -1)
+    {
         stat = _SHELL_END;
+        write(STDOUT_FILENO, "\n", 1);
+    }
     else if (getCheck == 1)
         stat = _SKIP;
-        
+
     if (stat == _NORMAL)
     {
         args = getToken(&buffer, " \n\t\r");
+        stat = built_ins(args);
+    }
+
+    if (stat == _NORMAL)
+    {
         if (access(args[0], X_OK) == -1)
             pPath = getPathArgs(args[0]);
 
         execute(pPath ? pPath : args[0], args);
     }
 
-    if (stat == _NORMAL)
-	    stat = built_ins(args);
-
-    if (stat == _SHELL_END)
-        write(STDOUT_FILENO, "\n", 1);
     free(args);
     free(pPath);
     free(buffer);

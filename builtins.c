@@ -17,7 +17,7 @@ int built_ins(char **args)
 
 	for (a = 0; arr[a].cmd != NULL; a++)
 	{
-		if (strncmp(args[0], arr[a].cmd, _strlen(arr[a].cmd)) == 0)
+		if (_strcmp(args[0], arr[a].cmd) == 0)
 			return (arr[a].f(args));
 	}
 	return (1);
@@ -30,9 +30,8 @@ int built_ins(char **args)
  *
  * Return: 2
  */
-int _env(char **args)
+int _env(__attribute__ ((unused)) char **args)
 {
-	(void)args;
 	int i;
 
 	for (i = 0; environ[i] != NULL; i++)
@@ -40,7 +39,7 @@ int _env(char **args)
 		write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
 		write(STDOUT_FILENO, "\n", 1);
 	}
-	return (2);
+	return (_SKIP);
 }
 /**
  * _bin_exit - function to exit the shell
@@ -49,8 +48,7 @@ int _env(char **args)
  *
  * Return: 3
  */
-int _bin_exit(char **args)
+int _bin_exit(__attribute__ ((unused)) char **args)
 {
-	free(args);
-	exit(0);
+	return (_SHELL_END);
 }

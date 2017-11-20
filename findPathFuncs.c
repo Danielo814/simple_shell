@@ -12,11 +12,11 @@ char *getKeyValue(char *key)
 
     while (environ[i] && tmp == NULL)
     {
-        tmp = strstr(environ[i], key);
+        tmp = _strstr(environ[i], key);
         i++;
     }
 
-    tmp = strstr(tmp, "="), tmp++;
+    tmp = _strstr(tmp, "="), tmp++;
     return (tmp);
 }
 /**
