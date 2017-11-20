@@ -33,5 +33,17 @@ int _strlen(char *s);
 unsigned int countToks(char *str, char *delim);
 char *_stralloc(int count, ...);
 char *_strstr(char *haystack, char *needle);
-
+int built_ins(char **);
+int _env(char **);
+int _bin_exit(char **);
+/**
+ * struct built - built ins structure
+ * @cmd: command to match
+ * @f: function to return
+ */
+typedef struct built
+{
+	char *cmd;
+	int (*f)(char **);
+} built_t;
 #endif
