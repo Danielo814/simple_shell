@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 int main(void)
 {
     int stat;
@@ -37,6 +36,9 @@ int promptShell(void)
 
         execute(pPath ? pPath : args[0], args);
     }
+
+    if (stat == _NORMAL)
+	    stat = built_ins(args);
 
     if (stat == _SHELL_END)
         write(STDOUT_FILENO, "\n", 1);
