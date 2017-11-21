@@ -113,6 +113,10 @@ $
 ## Bugs
 No bugs are known
 
+## How To Compile
+Use the command:
+```gcc -Wextra -Werror -Wall -pedantic *.c -o hsh```
+
 ## Authors
 **Daniel Ojeda** [Twitter](https://twitter.com/DanielC_Ojeda) | [Github](https://github.com/Danielo814)
 **Sid Carroll** [Twitter](https://twitter.com/sidCarroll7) | [Github](https://github.com/squidcarroll)
