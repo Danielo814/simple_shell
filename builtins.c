@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * built_ins - array of structs to find matching command string
+ * built_ns - array of structs to find matching command string
  * and return corresponding function
  * @args: contains value to match to first element of struct
  *
