@@ -79,9 +79,8 @@ int _strlen(char *s)
 	int counter = 0;
 	/* initialize a counter for the length */
 
- 	while (s[counter] != 0) /*uses s to create an array for the input*/
+	while (s[counter] != 0) /*uses s to create an array for the input*/
 		counter++; /*counts every element*/
-
 	return (counter); /*return end counter8*/
 }
 
@@ -95,20 +94,19 @@ int _strlen(char *s)
  */
 char *_strstr(char *haystack, char *needle)
 {
-    while (*haystack)
-    {
-        char *Begin = haystack;
-        char *pattern = needle;
+	while (*haystack)
+	{
+		char *Begin = haystack;
+		char *pattern = needle;
 
-        while (*haystack && *pattern && *haystack == *pattern)
-        {
-            haystack++;
-            pattern++;
-        }
-        if (!*pattern)
-            return (Begin);
-
-        haystack = Begin + 1;
-    }
-    return (0);
+		while (*haystack && *pattern && *haystack == *pattern)
+		{
+			haystack++;
+			pattern++;
+		}
+		if (!*pattern)
+			return (Begin);
+		haystack = Begin + 1;
+	}
+	return (0);
 }
