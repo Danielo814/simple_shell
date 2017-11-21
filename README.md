@@ -85,25 +85,30 @@ $
 * **AUTHORS:** This file contains contributors to this repository
 * **holberton.h:** Header file containing all function prototypes and needed libraries
 * **man_1_simple_shell:** man page for simple_shell
-* **builtins.c:** contains functions to recognize the text ```exit``` to exit the shell and ```env``` to print the current environment. ```int built_ins(char **args) is a function that checks if the character string matches input, if it finds a match, it'll call the next element in the structure which will be the function to execute. That function could either be ```int _env(char **args)``` which will print the current environment, or ```int _bin_exit(char **args)``` which will execute the current shell.
+* **builtins.c:**
+  * ```int built_ins(char **args)``` - array of structs to find matching command string
+  * ```int _env(__attribute__((unused)) char **args)``` - function to retreive environment and print
+  * ```int _bin_exit(__attribute__((unused)) char **args)``` - exits the shell
 * **findPathFuncs.c:**
-  * ```getKeyValue(char *key)``` - 
-  * ```getPathArgs(char *prog)``` - 
-  * ```get_x_args(char **env_paths, char *program)``` - 
-  * ```char *stralloc(int count, ...)``` - 
+  * ```getKeyValue(char *key)``` - gets pointer to the value string
+  * ```getPathArgs(char *prog)``` - locates command path
+  * ```get_x_args(char **env_paths, char *program)``` - tests if path is executable
+  * ```char *stralloc(int count, ...)``` - allocates and concatenates a string without realloc
 * **myFuncs.c:**
-  * ```char *_memset(char *s, char b, unsigned int n)``` -
-  * ```char *_strcat(char *dest, char *src)``` -
-  * ```char *_strcpy(char *dest, char *src)``` -
-  * ```int _strlen(char *s)```
-  * ```char *_strstr(char *haystack, char *needle)``` - 
+  * ```char *_memset(char *s, char b, unsigned int n)``` - recreates the memset function
+  * ```char *_strcat(char *dest, char *src)``` - concatenates two strings
+  * ```char *_strcpy(char *dest, char *src)``` - copy array from one pointer to another
+  * ```int _strlen(char *s)``` - gets length of string
+  * ```char *_strstr(char *haystack, char *needle)``` - locates substring in string
+* **myFuncs2.c**
+  * ```int _strcmp(char *21, char *s2)``` - compares two strings and returns difference
 * **shell.c:**
-  * ```int main(void)``` - 
-  * ```int promptShell(void)``` - 
-  * ```char **getToken*(char **buf, char *pattern)``` - 
-  * ```void execute(char *arg, char **args)``` - 
+  * ```int main(void)``` - starts shell loop
+  * ```int promptShell(void)``` - starts the shell prompt
+  * ```char **getToken*(char **buf, char *pattern)``` - tokenizes the string
+  * ```void execute(char *arg, char **args)``` - executes command with arguments
 * **utils.c:**
-  * ```unsigned int countToks(char *str, char *delim)``` - 
+  * ```unsigned int countToks(char *str, char *delim)``` - counts number of tokens
 
 ## Bugs
 No bugs are known
