@@ -115,7 +115,7 @@ No bugs are known
 
 ## How To Compile
 Use the command:
- * '''gcc -Wextra -Werror -Wall -pedantic *.c -o hsh'''
+```gcc -Wextra -Werror -Wall -pedantic *.c -o hsh```
 
 ## Authors
 **Daniel Ojeda** [Twitter](https://twitter.com/DanielC_Ojeda) | [Github](https://github.com/Danielo814)
